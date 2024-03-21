@@ -1,5 +1,5 @@
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 21
+targetCompatibility = 21
 
 eclipse {
     project {

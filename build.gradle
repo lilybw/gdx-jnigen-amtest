@@ -42,8 +42,8 @@ subprojects
     apply plugin: 'idea'
     apply plugin: 'java-library'
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = 21
+    targetCompatibility = 21
 
     version project.getProperty('version') + (isReleaseBuild() ? "" : "-SNAPSHOT")
 
@@ -58,6 +58,12 @@ subprojects
 
     tasks.withType(Test) {
        systemProperty 'file.encoding', 'UTF-8'
+    }
+
+    tasks.named('jar') {
+        manifest {
+            attributes('Automatic-Module-Name': 'gdx.jnigen.loader')
+        }
     }
 
     javadoc {
