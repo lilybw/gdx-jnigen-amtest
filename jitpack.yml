@@ -7,3 +7,7 @@ before_install:
   - chmod +x gradlew  # Ensure the Gradle wrapper script is executable
 install:
   - ./gradlew clean build -x test -x javadoc
+  - mkdir -p build/libs  # Ensure the directory exists
+  - cp gdx-jnigen-loader/build/libs/* build/libs/
+  - cp gdx-jnigen/build/libs/* build/libs/
+  - cp gdx-jnigen-gradle/build/libs/* build/libs/
